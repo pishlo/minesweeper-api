@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minesweeper Leaderboard</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f8f9fa;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 16px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    thead {
+      background-color: #1976d2;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏆 Minesweeper Leaderboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Username</th>
+        <th>Gems</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach((user, index) => { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= user.username %></td>
+          <td><%= user.gems %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
